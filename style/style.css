@@ -1,0 +1,236 @@
+@font-face {
+    font-family: "Rancho";
+    src: url(../font/Rancho-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F0F0F0;
+    font-family: monospace;
+}
+
+header {
+    background-color: #DA5E5B;
+    padding: 20px 100px;
+    height: 100px;
+}
+
+.logoContainer {
+    text-align: center;
+    float: left;
+}
+
+.nameLogo {
+    font-family: "Rancho";
+}
+
+img {
+    width: 50px;
+}
+
+.linkCalcular {
+    float: right;
+}
+
+a {
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 100px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: 3px solid black;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+a:hover {
+    background-color: black;
+    color: white;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.description {
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.container {
+    font-family: monospace, 'Courier New', Courier;
+    max-width: 350px;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: #DA5E5B;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.titleContainer {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+input {
+    font-family: monospace, 'Courier New', Courier;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    font-family: monospace, 'Courier New', Courier;
+    font-size: 1rem;
+    padding: 5px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #DA5E5B;
+    padding: 15px;
+    text-align: center;
+}
+
+.descriptionAgradecimento {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.logoFooter {
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+}
+
+.direitosFooter {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width:1024px) {
+    main {
+        max-width: 800px;
+    }
+
+    .description {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .descriptionAgradecimento {
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .description {
+        font-size: 1.2rem;
+    }
+
+    .descriptionAgradecimento {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:651px) {
+    .description {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .descriptionAgradecimento {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width:530px) {
+    header {
+        padding: 20px 50px;
+        height: 80px;
+    }
+
+    .nameLogo {
+        font-size: 2rem;
+    }
+
+    img {
+        width: 40px;
+    }
+
+    a {
+        line-height: 80px;
+        font-size: 0.8rem;
+    }
+
+    .description {
+        margin: 10px 0 40px 0;
+    }
+
+    .container {
+        margin-bottom: 40px;
+    }
+
+    .descriptionAgradecimento {
+        margin-bottom: 20px;
+    }
+
+    .direitosFooter {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    header {
+        padding: 10px 20px;
+        height: 80px;
+    }
+
+    .nameLogo {
+        font-size: 1.2rem;
+    }
+
+    img {
+        width: 40px;
+    }
+
+    a {
+        font-size: 0.7rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        text-align: justify;
+    }
+
+    .titleContainer {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    button {
+        font-size: 0.8rem;
+    }
+
+    .descriptionAgradecimento {
+        font-size: 1rem;
+        text-align: justify;
+    }
+}
