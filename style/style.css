@@ -28,7 +28,7 @@ header {
     font-family: "Rancho";
 }
 
-img {
+.imgLogo {
     width: 50px;
 }
 
@@ -176,7 +176,7 @@ footer {
         font-size: 2rem;
     }
 
-    img {
+    .imgLogo {
         width: 40px;
     }
 
@@ -212,7 +212,7 @@ footer {
         font-size: 1.2rem;
     }
 
-    img {
+    .imgLogo {
         width: 40px;
     }
 
