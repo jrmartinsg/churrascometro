@@ -27,9 +27,9 @@
         </p>
         <div class="container">
             <h1 class="titleContainer">Calcule seu churrasco:</h1>
-            <input id="adultos" name="adultos" type="number" placeholder="Adultos">
-            <input id="criancas" name="criancas" type="number" placeholder="Crianças">
-            <input id="duracao" name="duracao" type="number" placeholder="Duração (h)">
+            <input id="adultos" name="adultos" type="number" placeholder="Adultos" min="0">
+            <input id="criancas" name="criancas" type="number" placeholder="Crianças" min="0">
+            <input id="duracao" name="duracao" type="number" placeholder="Duração (h)" min="0">
             <button onclick="calcular()">Calcular</button>
 
             <div id="carne"></div>
