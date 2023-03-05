@@ -3,56 +3,55 @@
 // Refri/Água - 1000ml p/ pessoa +6h, 1500ml
 // Crianças valem por 0.5 (meio)
 
-let inputAdultos = document.getElementById("adultos")
-let inputCriancas = document.getElementById("criancas")
-let inputDuracao = document.getElementById("duracao")
-
-let carne = document.getElementById("carne")
-let cerveja = document.getElementById("cerveja")
-let bebidas = document.getElementById("bebidas")
-
-function carnePP(duracao) {
-    if (duracao >= 6) {
-        return 650
-    }
-    else {
-        return 400
-    }
-
-}
-
-function cervejaPP(duracao) {
-    if (duracao >= 6) {
-        return 2000
-    }
-    else {
-        return 1200
-    }
-
-}
-
-function bebidasPP(duracao) {
-    if (duracao >= 6) {
-        return 1500
-    }
-    else {
-        return 1000
-    }
-
-}
+let inputAdultos = document.getElementById("adultos");
+let inputCriancas = document.getElementById("criancas");
+let inputDuracao = document.getElementById("duracao");
+let resultado = document.getElementById("resultado");
 
 function calcular() {
+  let adultos = Number(inputAdultos.value);
+  let criancas = Number(inputCriancas.value);
+  let duracao = Number(inputDuracao.value);
 
-    let adultos = inputAdultos.value
-    let criancas = inputCriancas.value
-    let duracao = inputDuracao.value
+  let carne = 400;
+  let cerveja = 1200;
+  let refriAgua = 1000;
 
-    let qdtTotalCarne = carnePP(duracao) * adultos + (carnePP(duracao)) / 2 * criancas
-    let qdtTotalCerveja = cervejaPP(duracao) * adultos
-    let qdtTotalBebidas = bebidasPP(duracao) * adultos + (bebidasPP(duracao)) / 2 * criancas
+  if (duracao >= 6) {
+    carne = 650;
+    cerveja = 2000;
+    refriAgua = 1500;
+  }
 
-    carne.innerHTML = `<img src='./img/carne.png' width='32px' ' <p>  ${qdtTotalCarne / 1000} Kg de Carne`
-    cerveja.innerHTML = `<img src='./img/cerveja.png' width='32px' <p>  ${Math.ceil(qdtTotalCerveja / 355)} Latas de Cerveja`
-    bebidas.innerHTML = `<img src='./img/garrafa.png' width='32px' <p>  ${Math.ceil(qdtTotalBebidas / 2000)} Garrafas de Bebidas`
+  if (duracao == 0) {
+    alert("É obrigatório preencher o tempo de duração do churrasco!");
+    resultado.innerHTML = "";
+  }
+  else if (adultos == 0) {
+    let carneSoma = (carne * criancas) / 2;
+    let cervejaSoma = 0;
+    let refriSoma = (refriAgua * criancas) / 2;
 
+    resultado.innerHTML = `<img src='./img/carne.png' width='32px'<p>   ${Math.ceil(carneSoma / 1000)} Kg de Carne!</p>`;
+    resultado.innerHTML += `<img src='./img/cerveja.png' width='32px'<p>   ${Math.ceil(cervejaSoma)} Latas de Cerveja!</p>`;
+    resultado.innerHTML += `<img src='./img/garrafa.png' width='32px'<p>   ${Math.ceil(refriSoma / 2000)} Garrafas de Bebidas!</p>`;
+  }
+  else if (criancas == 0) {
+    let carneSoma = carne * adultos;
+    let cervejaSoma = cerveja * adultos;
+    let refriSoma = refriAgua * adultos;
+
+    resultado.innerHTML = `<img src='./img/carne.png' width='32px'<p>   ${Math.ceil(carneSoma / 1000)} Kg de Carne!</p>`;
+    resultado.innerHTML += `<img src='./img/cerveja.png' width='32px'<p>   ${Math.ceil(cervejaSoma / 355)} Latas de Cerveja!</p>`;
+    resultado.innerHTML += `<img src='./img/garrafa.png' width='32px'<p>   ${Math.ceil(refriSoma / 2000)} Garrafas de Bebidas!</p>`;
+  }
+  else {
+    let carneSoma = (carne * adultos) + (carne * criancas) / 2;
+    let cervejaSoma = cerveja * adultos;
+    let refriSoma = (refriAgua * adultos) + (refriAgua * criancas) / 2;
+
+    resultado.innerHTML = `<img src='./img/carne.png' width='32px'<p>   ${Math.ceil(carneSoma / 1000)} Kg de Carne!</p>`;
+    resultado.innerHTML += `<img src='./img/cerveja.png' width='32px'<p>   ${Math.ceil(cervejaSoma / 355)} Latas de Cerveja!</p>`;
+    resultado.innerHTML += `<img src='./img/garrafa.png' width='32px'<p>   ${Math.ceil(refriSoma / 2000)} Garrafas de Bebidas!</p>`;
+  }
 }
