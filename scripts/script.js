@@ -24,8 +24,10 @@ function calcular() {
   }
 
   if (duracao == 0) {
-    alert("É obrigatório preencher o tempo de duração do churrasco!");
-    resultado.innerHTML = "";
+    alert("É necessário preencher a duração do churrasco!");
+  }
+  else if ((duracao > 0) && (adultos == 0) && (criancas == 0)){
+    alert('Valores inválidos! Preencha novamente.')
   }
   else if (adultos == 0) {
     let carneSoma = (carne * criancas) / 2;
