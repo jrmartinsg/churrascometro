@@ -21,13 +21,15 @@ function calcular() {
     carne = 650;
     cerveja = 2000;
     refriAgua = 1500;
+  } 
+  else if (duracao == 0 && adultos == 0 && criancas == 0) {
+    alert("Preencha todos os campos!");
   }
-
-  if (duracao == 0) {
+  else if (duracao > 0 && adultos == 0 && criancas == 0) {
+    alert("Faltando informações! Preencha novamente.");
+  }
+  else if (duracao == 0) {
     alert("É necessário preencher a duração do churrasco!");
-  }
-  else if ((duracao > 0) && (adultos == 0) && (criancas == 0)){
-    alert('Valores inválidos! Preencha novamente.')
   }
   else if (adultos == 0) {
     let carneSoma = (carne * criancas) / 2;
@@ -48,9 +50,9 @@ function calcular() {
     resultado.innerHTML += `<img src='./img/garrafa.png' width='32px'<p>   ${Math.ceil(refriSoma / 2000)} Garrafas de Bebidas!</p>`;
   }
   else {
-    let carneSoma = (carne * adultos) + (carne * criancas) / 2;
+    let carneSoma = carne * adultos + (carne * criancas) / 2;
     let cervejaSoma = cerveja * adultos;
-    let refriSoma = (refriAgua * adultos) + (refriAgua * criancas) / 2;
+    let refriSoma = refriAgua * adultos + (refriAgua * criancas) / 2;
 
     resultado.innerHTML = `<img src='./img/carne.png' width='32px'<p>   ${Math.ceil(carneSoma / 1000)} Kg de Carne!</p>`;
     resultado.innerHTML += `<img src='./img/cerveja.png' width='32px'<p>   ${Math.ceil(cervejaSoma / 355)} Latas de Cerveja!</p>`;
